@@ -1,0 +1,32 @@
+{
+  "Getting Started": {
+    "message": "はじめる"
+  },
+  "Download": {
+    "message": "ダウンロード"
+  },
+  "Download Floorp Portable": {
+    "message": "Floorp Portable をダウンロード"
+  },
+  "No installation required": {
+    "message": "インストールは必要ありません"
+  },
+  "Just download and extract the file, and you can use it right away.": {
+    "message": "ファイルをダウンロードして解凍するだけで、すぐに使用できます。"
+  },
+  "Supports automatic updates": {
+    "message": "自動アップデートをサポート"
+  },
+  "No manual updating is required. Everything is done automatically.": {
+    "message": "手動でアップデートする必要はありません。すべてが自動的に行われます。"
+  },
+  "No pollution of an environment": {
+    "message": "環境を汚染しない"
+  },
+  "Minimize writes to the Windows registry.": {
+    "message": "Windows レジストリへの書き込みを最小限に抑えます。"
+  },
+  "Portable version of Floorp": {
+    "message": "Floorp のポータブル版"
+  }
+}

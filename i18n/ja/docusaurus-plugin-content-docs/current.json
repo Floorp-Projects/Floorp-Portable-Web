@@ -1,0 +1,10 @@
+{
+  "sidebar.docsSidebar.category.Migrate from v11 to v12": {
+    "message": "v11 から v12 への移行",
+    "description": "The label for category Migrate from v11 to v12 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Migrate from v11 to v12.link.generated-index.description": {
+    "message": "v11 から v12 への移行ガイド",
+    "description": "The generated-index page description for category Migrate from v11 to v12 in sidebar docsSidebar"
+  }
+}

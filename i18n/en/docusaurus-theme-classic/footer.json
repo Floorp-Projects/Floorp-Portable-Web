@@ -1,0 +1,42 @@
+{
+  "link.title.Docs": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "Introduction",
+    "description": "The label of footer link with label=Introduction linking to /docs/intro"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://aka.ablaze.one/discord"
+  },
+  "link.item.label.X (Ablaze)": {
+    "message": "X (Ablaze)",
+    "description": "The label of footer link with label=X (Ablaze) linking to https://x.com/Ablaze_MIRAI"
+  },
+  "link.item.label.X (Main Developer)": {
+    "message": "X (Main Developer)",
+    "description": "The label of footer link with label=X (Main Developer) linking to https://x.com/typeling1578"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Floorp-Projects/Floorp-Portable"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 Ablaze. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

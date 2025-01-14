@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Migrate from v11 to v12": {
+    "message": "Migrate from v11 to v12",
+    "description": "The label for category Migrate from v11 to v12 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Migrate from v11 to v12.link.generated-index.description": {
+    "message": "Migration Guide from v11 to v12",
+    "description": "The generated-index page description for category Migrate from v11 to v12 in sidebar docsSidebar"
+  }
+}

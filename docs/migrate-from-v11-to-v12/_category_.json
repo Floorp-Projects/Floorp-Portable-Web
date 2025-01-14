@@ -1,0 +1,8 @@
+{
+  "label": "Migrate from v11 to v12",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Migration Guide from v11 to v12"
+  }
+}

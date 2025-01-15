@@ -39,3 +39,21 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ env.REPO }}:${{ env.SHORT_SHA }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get short SHA
+        run: |
+          echo "SHORT_SHA=$(echo $GITHUB_SHA | head -c7)" >> $GITHUB_ENV
+
+      - name: Deploying...
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_SSH_HOST }}
+          username: ${{ secrets.DEPLOY_SSH_USER }}
+          key: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DEPLOY_SSH_PORT }}
+          cipher: ed25519
+          fingerprint: ${{ secrets.DEPLOY_SSH_HOST_FINGERPRINT }}
+          script: ./update-docker-image.sh "${{ env.SHORT_SHA }}"

@@ -57,4 +57,4 @@ jobs:
           port: ${{ secrets.DEPLOY_SSH_PORT }}
           cipher: ed25519
           fingerprint: ${{ secrets.DEPLOY_SSH_HOST_FINGERPRINT }}
-          script: ./update-docker-image.sh "${{ env.SHORT_SHA }}"
+          script: /bin/bash --login ./update-docker-image.sh "${{ env.SHORT_SHA }}"

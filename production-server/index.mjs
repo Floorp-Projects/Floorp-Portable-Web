@@ -15,7 +15,7 @@ const cli_options = {
 }
 
 const args = process.argv.slice(2);
-const parsedArgs = parseArgs({ cli_options, args });
+const parsedArgs = parseArgs({ options: cli_options, args });
 
 const app = express();
 

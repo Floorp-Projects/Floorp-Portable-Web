@@ -14,6 +14,7 @@ COPY --from=builder /app/build /app/build
 COPY --from=builder /app/docusaurus.config.ts /app/docusaurus.config.ts
 COPY --from=builder /app/package.json /app/package.json
 COPY --from=builder /app/pnpm-lock.yaml /app/pnpm-lock.yaml
+COPY --from=builder /app/patches /app/patches
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 EXPOSE 3000
 CMD ["pnpm", "run", "serve", "--host", "0.0.0.0"]

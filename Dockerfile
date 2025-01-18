@@ -11,6 +11,8 @@ RUN pnpm run build
 
 FROM base
 COPY --from=builder /app/build /app/build
+COPY --from=builder /app/api /app/api
+COPY --from=builder /app/production-server /app/production-server
 COPY --from=builder /app/docusaurus.config.ts /app/docusaurus.config.ts
 COPY --from=builder /app/package.json /app/package.json
 COPY --from=builder /app/pnpm-lock.yaml /app/pnpm-lock.yaml

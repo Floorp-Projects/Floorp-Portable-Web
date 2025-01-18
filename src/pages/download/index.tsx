@@ -54,10 +54,7 @@ function DownloadpageHeader() {
 function DownloadpageBody() {
 
   const { data: platforms, error, isLoading } = useSWR('Floorp-Projects/Floorp-Portable', async (arg) => {
-    const owner = arg.split('/')[0];
-    const repo = arg.split('/')[1];
-
-    const platforms = await getLatestReleaseAssets({ owner: owner, repo: repo });
+    const platforms = await getLatestReleaseAssets();
 
     return platforms;
   }, { revalidateOnFocus: false });

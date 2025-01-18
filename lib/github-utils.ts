@@ -26,10 +26,10 @@ function getPlatformFromAssetName(name: string) {
   return result;
 }
 
-export async function getLatestReleaseAssets({ owner, repo }: { owner: string, repo: string }) {
+export async function getLatestReleaseAssets() {
   let result;
   try {
-    result = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
+    result = await fetch(`/api/portable-latest-release`);
   } catch (e) {
     console.error(e);
     return [];

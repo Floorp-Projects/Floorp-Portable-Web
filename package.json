@@ -9,7 +9,7 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
+    "serve": "node ./production-server/index.mjs",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"
@@ -18,7 +18,9 @@
     "@docusaurus/core": "3.7.0",
     "@docusaurus/preset-classic": "3.7.0",
     "@mdx-js/react": "^3.0.0",
+    "async-lock": "^1.4.1",
     "clsx": "^2.0.0",
+    "express": "^4.21.2",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -46,5 +48,10 @@
   },
   "engines": {
     "node": ">=18.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@docusaurus/core": "patches/@docusaurus__core.patch"
+    }
   }
 }

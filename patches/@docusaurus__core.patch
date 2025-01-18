@@ -1,0 +1,12 @@
+diff --git a/lib/commands/start/start.js b/lib/commands/start/start.js
+index b8c7c06cdc02ac4688ff1ff41f512514a8e7de24..f1048c6d9453b3c9b47f083eb3aa5921fd38786c 100644
+--- a/lib/commands/start/start.js
++++ b/lib/commands/start/start.js
+@@ -33,6 +33,7 @@ async function start(siteDirParam = '.', cliOptions = {}) {
+         cliOptions,
+         openUrlContext: reloadableSite.openUrlContext,
+     });
++    devServer.options.setupMiddlewares = (await import(process.cwd() + "/api/index.mjs")).hookDevServerSetupMiddlewares(devServer.options.setupMiddlewares);
+     ['SIGINT', 'SIGTERM'].forEach((sig) => {
+         process.on(sig, () => {
+             devServer.stop();

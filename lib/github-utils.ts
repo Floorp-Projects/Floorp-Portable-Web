@@ -65,5 +65,19 @@ export async function getLatestReleaseAssets() {
     }
   }
 
+  r_data.push({
+    platform: "Source Code",
+    assets: [
+      {
+        name: "Source code (zip)",
+        href: data.zipball_url,
+      },
+      {
+        name: "Source code (tar.gz)",
+        href: data.tarball_url,
+      },
+    ],
+  });
+
   return r_data;
 }

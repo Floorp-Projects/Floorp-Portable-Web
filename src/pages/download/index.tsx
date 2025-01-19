@@ -23,9 +23,8 @@ function Platform({ platform, assets }) {
       <div className="padding--md">
         <Heading as="h2">{platform}</Heading>
         {assets.map((asset, idx) => (
-          <div>
+          <div key={idx}>
             <Link
-              key={idx}
               to={asset.href}
             >
               <FaDownload style={{ marginRight: "0.5rem" }} />

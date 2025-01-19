@@ -13,6 +13,7 @@ import useSWR from 'swr';
 import { MdError } from 'react-icons/md';
 
 import styles from './index.module.css';
+import { countDisplayCharsLength } from '@site/lib/count-chars';
 
 function Platform({ platform, assets }) {
   return (
@@ -41,17 +42,7 @@ function DownloadpageHeader() {
   const {siteConfig} = useDocusaurusContext();
 
   const title = translate({ message: "Download" });
-  const length = (function() {
-    let count = 0;
-    for (const char of title) {
-      if (char.match(/[ -~]/)) {
-        count += 0.5;
-      } else {
-        count += 1;
-      }
-    }
-    return count;
-  })();
+  const length = countDisplayCharsLength(title);
 
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>

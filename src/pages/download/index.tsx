@@ -61,7 +61,7 @@ function DownloadpageBody() {
     const platforms = await getLatestReleaseAssets();
 
     return platforms;
-  }, { revalidateOnFocus: false });
+  });
 
   return (
     <div className='container padding-top--md padding-bottom--lg'>

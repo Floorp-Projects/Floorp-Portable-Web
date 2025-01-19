@@ -39,11 +39,25 @@ function Platform({ platform, assets }) {
 
 function DownloadpageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
+  const title = translate({ message: "Download" });
+  const length = (function() {
+    let count = 0;
+    for (const char of title) {
+      if (char.match(/[ -~]/)) {
+        count += 0.5;
+      } else {
+        count += 1;
+      }
+    }
+    return count;
+  })();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          <Translate>Download</Translate>
+        <Heading as="h1" className="hero__title" style={{ fontSize: `clamp(2rem, calc((100vw - 6rem) / ${length}), 3rem)` }}>
+          {title}
         </Heading>
       </div>
     </header>

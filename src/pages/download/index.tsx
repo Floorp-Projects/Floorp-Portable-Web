@@ -13,6 +13,7 @@ import useSWR from 'swr';
 import { MdError } from 'react-icons/md';
 
 import styles from './index.module.css';
+import { countDisplayCharsLength } from '@site/lib/count-chars';
 
 function Platform({ platform, assets }) {
   return (
@@ -23,9 +24,8 @@ function Platform({ platform, assets }) {
       <div className="padding--md">
         <Heading as="h2">{platform}</Heading>
         {assets.map((asset, idx) => (
-          <div>
+          <div key={idx}>
             <Link
-              key={idx}
               to={asset.href}
             >
               <FaDownload style={{ marginRight: "0.5rem" }} />
@@ -40,11 +40,15 @@ function Platform({ platform, assets }) {
 
 function DownloadpageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
+  const title = translate({ message: "Download" });
+  const length = countDisplayCharsLength(title);
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          <Translate>Download</Translate>
+        <Heading as="h1" className="hero__title" style={{ fontSize: `clamp(2rem, calc((100vw - 6rem) / ${length}), 3rem)` }}>
+          {title}
         </Heading>
       </div>
     </header>

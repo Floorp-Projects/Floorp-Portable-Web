@@ -12,7 +12,7 @@ sidebar_position: 4
   * メモリ: 8GB+
   * ストレージ: 最低でも4GBの空き容量
   * ソフトウェア: MSYS2
-  * パッケージ: mingw-w64-x86_64-gcc, mingw-w64-x86_64-go, git, unzip
+  * パッケージ: make, mingw-w64-x86_64-gcc, mingw-w64-x86_64-go, git, unzip, mingw-w64-x86_64-7zip, mingw-w64-x86_64-jq
 * Linux
   * アーキテクチャ: x86_64, aarch64
   * メモリ: 8GB+
@@ -21,19 +21,33 @@ sidebar_position: 4
 
 ## ビルド手順
 
-### 1. Floorp-Portable のソースコードを取得します
-```
+### 1. 要件のインストール
+
+#### Windows
+1. MSYS2 MinGW64 シェルを実行します
+2. パッケージをインストールします
+   ```shell
+   pacman -Syu make mingw-w64-x86_64-gcc mingw-w64-x86_64-go git unzip mingw-w64-x86_64-7zip mingw-w64-x86_64-jq
+   ```
+
+#### Linux
+1. Bash を実行します
+2. パッケージをインストールします
+   各ディストリビューションのパッケージマネージャを使用して、[パッケージ](#requirements)をインストールします
+
+### 2. Floorp-Portable のソースコードを取得します
+```shell
 git clone --recursive https://github.com/Floorp-Projects/Floorp-Portable
 cd Floorp-Portable
 ```
 
-### 2. Floorp のファイルを設置します
+### 3. Floorp のファイルを設置します
 `core`という名前のフォルダを作成し、その中にFloorp のファイルを設置します。
 
 #### Windows
-```powershell
-curl.exe -L "https://github.com/Floorp-Projects/Floorp/releases/latest/download/floorp-win64.installer.exe" -o floorp-win64.installer.exe
-.\src\utils\7za.exe x floorp-win64.installer.exe -ir!core
+```shell
+curl -L "https://github.com/Floorp-Projects/Floorp/releases/latest/download/floorp-win64.installer.exe" -o floorp-win64.installer.exe
+7z x floorp-win64.installer.exe '-ir!core'
 ```
 
 #### Linux
@@ -44,17 +58,10 @@ mkdir core
 tar -xvf floorp-files.tar.bz2 -C core --strip-components 1
 ```
 
-### 3. ビルド
-
-#### Windows
-```
-.\build.bat
-```
-
-#### Linux
-```
+### 4. ビルド
+```shell
 ./build.sh
 ```
 
-### 4. これで完了です
+### 5. これで完了です
 `dist`ディレクトリの中にあるファイルやディレクトリが実行に必要です。

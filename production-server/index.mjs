@@ -27,7 +27,7 @@ app.all("*", async (req, res) => {
 
   let path_parent;
   while (path_parent !== "/") {
-    path_parent = path.posix.dirname(req.path);
+    path_parent = path.posix.dirname(path_parent ?? req.path);
 
     const not_found_path = path.posix.join("build", path_parent, "404.html");
     if (fs.existsSync(not_found_path)) {

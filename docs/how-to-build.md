@@ -33,6 +33,7 @@ sidebar_position: 4
 #### Linux
 1. Run Bash
 2. Install packages
+
    Use the package manager of each distribution to install [packages](#requirements).
 
 ### 2. Get Floorp-Portable source code

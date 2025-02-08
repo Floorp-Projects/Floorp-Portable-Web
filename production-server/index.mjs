@@ -23,13 +23,11 @@ const app = express();
 hookProductionMiddlewares(app);
 app.use(express.static("build"));
 app.all("*", async (req, res) => {
-  const path = req.path;
-
   let not_found;
 
   let path_parent;
   while (path_parent !== "/") {
-    path_parent = path.posix.dirname(path);
+    path_parent = path.posix.dirname(req.path);
 
     const not_found_path = path.posix.join("build", path_parent, "404.html");
     if (fs.existsSync(not_found_path)) {
